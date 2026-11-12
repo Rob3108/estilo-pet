@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estilo Pet | Tienda para mascotas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="navidad">
+  <header class="top">
+    <a class="logo" href="#"><img src="img/logo.png" alt="Estilo Pet"></a>
+    <input id="buscar" type="search" placeholder="Buscar alimento, juguetes, camas…" aria-label="Buscar productos">
+    <button id="abrirCarrito" class="btn-carrito">Carrito <span id="contador">0</span></button>
+  </header>
+
+  <section class="hero">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="pata" viewBox="0 0 64 64"><ellipse cx="32" cy="42" rx="14" ry="11"/><ellipse cx="14" cy="28" rx="6" ry="8"/><ellipse cx="26" cy="16" rx="6" ry="8"/><ellipse cx="40" cy="16" rx="6" ry="8"/><ellipse cx="52" cy="28" rx="6" ry="8"/></symbol><symbol id="gorro" viewBox="0 0 40 36"><path d="M5 27Q8 8 28 7Q34 7 33 12Q28 15 34 27Z" fill="#D7263D" stroke="#111" stroke-width="4" stroke-linejoin="round"/><rect x="3" y="24" width="35" height="9" rx="4.5" fill="#fff" stroke="#111" stroke-width="4"/><circle cx="33" cy="10" r="5" fill="#fff" stroke="#111" stroke-width="4"/></symbol></svg>
+    <svg class="pata p1" aria-hidden="true"><use href="#pata"/></svg><svg class="pata p2" aria-hidden="true"><use href="#pata"/></svg><svg class="pata p3" aria-hidden="true"><use href="#pata"/></svg><svg class="pata p4" aria-hidden="true"><use href="#pata"/></svg>
+    <div class="hero-texto">
+      <div class="hero-navidad">🎄 ¡Feliz Navidad! Regalos para tu mascota</div>
+      <h1>Todo lo que tu mascota necesita, en un solo lugar <svg class="pata-t" viewBox="0 0 64 64" aria-hidden="true"><use href="#pata"/></svg></h1>
+      <p>Alimento, juguetes y cuidado de las mejores marcas. Pide hoy y recíbelo en casa.</p>
+      <a class="btn" href="#catalogo">Ver productos <span class="flecha">→</span></a>
+    </div>
+    <img class="hero-foto" src="img/hero.png" alt="Perro y gato junto a comida y juguetes">
+    <div class="tiles"><button class="tile" data-tipo="Alimento"><svg class="ico" viewBox="0 0 80 80" aria-hidden="true"><path d="M22 18h36l4 8v40a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V26z" fill="#F7C600" stroke="#111" stroke-width="3"/><path d="M18 26h44" stroke="#111" stroke-width="3"/><use href="#pata" x="28" y="36" width="24" height="24" fill="#111"/><use class="gorro" href="#gorro" x="26" y="-1" width="30" height="27" transform="rotate(8 41 12)"/></svg><span class="fila">Alimento<i class="go">→</i></span></button><button class="tile" data-tipo="Accesorios"><svg class="ico" viewBox="0 0 80 80" aria-hidden="true"><path d="M18 62C8 40 24 12 42 20s6 30 20 32" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/><circle cx="16" cy="62" r="8" fill="none" stroke="#111" stroke-width="4"/><rect x="56" y="46" width="14" height="12" rx="3" fill="#111"/><use class="gorro" href="#gorro" x="27" y="-2" width="30" height="27" transform="rotate(-10 42 12)"/></svg><span class="fila">Accesorios<i class="go">→</i></span></button><button class="tile" data-tipo="Juguetes"><svg class="ico" viewBox="0 0 80 80" aria-hidden="true"><circle cx="30" cy="52" r="17" fill="#3B82F6" stroke="#111" stroke-width="3"/><path d="M16 46c10 4 20 4 28 0" fill="none" stroke="#fff" stroke-width="3"/><g transform="rotate(-35 52 28)" fill="#FF6FA5" stroke="#111" stroke-width="3"><rect x="32" y="23" width="40" height="10" rx="5"/><circle cx="33" cy="22" r="6"/><circle cx="33" cy="34" r="6"/><circle cx="71" cy="22" r="6"/><circle cx="71" cy="34" r="6"/></g><use class="gorro" href="#gorro" x="3" y="19" width="26" height="23" transform="rotate(-22 16 31)"/></svg><span class="fila">Juguetes<i class="go">→</i></span></button><button class="tile" data-tipo="Farmacia"><svg class="ico" viewBox="0 0 80 80" aria-hidden="true"><rect x="28" y="30" width="24" height="40" rx="6" fill="#6EC6FF" stroke="#111" stroke-width="3"/><rect x="34" y="16" width="12" height="14" rx="3" fill="#111"/><path d="M34 16h14l-3-6H37z" fill="#111"/><path d="M40 62l-8-8a5 5 0 0 1 8-6 5 5 0 0 1 8 6z" fill="#FF6FA5"/><use class="gorro" href="#gorro" x="27" y="-2" width="26" height="23" transform="rotate(10 40 10)"/></svg><span class="fila">Farmacia<i class="go">→</i></span></button></div>
+  </section>
+
+  <section class="marcas-sec" aria-label="Marcas que vendemos">
+    <div class="marcas-cab">
+      <h2>Las marcas que vendemos <small id="marcasCuenta"></small></h2>
+    </div>
+    <div class="marcas-carrusel">
+      <button class="flecha-m" id="marcaPrev" aria-label="Marcas anteriores">‹</button>
+      <div class="marcas-pista" id="marcasPista"><ul id="marcasCarrusel"></ul></div>
+      <button class="flecha-m" id="marcaNext" aria-label="Marcas siguientes">›</button>
+    </div>
+  </section>
+
+  <main id="catalogo">
+    <p id="filtroTipo" class="filtro-tipo" hidden>Mostrando: <strong id="tipoNombre"></strong><button id="quitarTipo">Quitar filtro</button></p>
+    <nav id="secciones" class="chips" aria-label="Secciones"></nav>
+    <div class="marca-filtro">
+      <label for="marcaBuscar">Marca</label>
+      <input id="marcaBuscar" list="marcasLista" placeholder="Todas · escribe o elige una marca" autocomplete="off">
+      <datalist id="marcasLista"></datalist>
+      <button id="quitarMarca" hidden>Quitar</button>
+    </div>
+    <div id="grilla" class="grilla"></div>
+    <p id="vacio" class="vacio" hidden>No encontramos productos con ese filtro. Prueba otra sección o marca.</p>
+  </main>
+
+  <aside id="panel" class="panel" aria-label="Carrito" hidden>
+    <div class="panel-cab"><h2>Tu carrito</h2><button id="cerrarCarrito" aria-label="Cerrar">✕</button></div>
+    <ul id="items"></ul>
+    <div class="panel-pie">
+      <p>Total: <strong id="total">S/ 0.00</strong></p>
+      <button id="pagar" class="btn">Pagar ahora</button>
+    </div>
+  </aside>
+
+  <div id="detalle" class="detalle" hidden>
+    <div class="detalle-caja" role="dialog" aria-modal="true" aria-labelledby="detTitulo">
+      <button id="cerrarDetalle" class="detalle-x" aria-label="Cerrar">✕</button>
+      <div id="detalleCuerpo"></div>
+    </div>
+  </div>
+
+  <div id="visor" class="visor" hidden>
+    <button id="cerrarVisor" class="visor-x" aria-label="Cerrar">✕</button>
+    <figure>
+      <div class="visor-marco"><img id="visorImg" alt=""></div>
+      <figcaption id="visorTxt"></figcaption>
+      <p class="visor-ayuda">Toca la imagen para acercar y mueve el dedo o el mouse para recorrerla</p>
+    </figure>
+  </div>
+
+  <section id="reclamaciones" class="reclamos" aria-labelledby="recTitulo">
+    <div class="rec-caja">
+      <svg class="rec-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="8" width="38" height="48" rx="5" fill="#F7C600" stroke="#111" stroke-width="3"/><path d="M18 8v48" stroke="#111" stroke-width="3"/><path d="M26 22h14M26 31h14M26 40h9" stroke="#111" stroke-width="3" stroke-linecap="round"/><circle cx="48" cy="46" r="11" fill="#fff" stroke="#111" stroke-width="3"/><path d="M48 40v7M48 51v.5" stroke="#111" stroke-width="3" stroke-linecap="round"/></svg>
+      <div class="rec-txt">
+        <h2 id="recTitulo">Libro de Reclamaciones</h2>
+        <p>Conforme al Código de Protección y Defensa del Consumidor, puedes registrar un reclamo o una queja. Te respondemos en un plazo máximo de 15 días hábiles.</p>
+        <p class="rec-prov">Estilo Pet · Av. Elmer Faucett 182, Tda. A1, San Miguel<span id="recRuc"></span></p>
+      </div>
+      <button id="abrirReclamo" class="btn" type="button">Abrir Libro de Reclamaciones</button>
+    </div>
+  </section>
+
+  <div id="reclamo" class="detalle" hidden>
+    <div class="detalle-caja" role="dialog" aria-modal="true" aria-labelledby="rcTitulo">
+      <button id="cerrarReclamo" class="detalle-x" type="button" aria-label="Cerrar">✕</button>
+      <h2 id="rcTitulo">Hoja de Reclamación</h2>
+      <p class="rc-sub">Estilo Pet<span id="rcRuc"></span> · Av. Elmer Faucett 182, Tda. A1, San Miguel</p>
+      <form id="reclamoForm" class="rec-form" autocomplete="on">
+        <fieldset><legend>1. Tus datos</legend>
+          <label>Nombres y apellidos *<input id="rcNombre" name="nombre" required autocomplete="name"></label>
+          <div class="rec-grid">
+            <label>Documento *<select name="tipoDoc"><option>DNI</option><option>CE</option><option>Pasaporte</option></select></label>
+            <label>N.º de documento *<input name="doc" required inputmode="numeric" autocomplete="off"></label>
+            <label>Teléfono *<input name="tel" type="tel" required autocomplete="tel"></label>
+            <label>Correo electrónico *<input name="email" type="email" required autocomplete="email"></label>
+          </div>
+          <label>Domicilio (opcional)<input name="domicilio" autocomplete="street-address"></label>
+        </fieldset>
+        <fieldset><legend>2. Bien contratado</legend>
+          <div class="rec-radios"><label><input type="radio" name="bien" value="Producto" checked> Producto</label><label><input type="radio" name="bien" value="Servicio"> Servicio</label></div>
+          <div class="rec-grid">
+            <label>Descripción *<input name="descBien" required placeholder="Ej.: Alimento para perro 15 kg"></label>
+            <label>Monto en S/ (opcional)<input name="monto" inputmode="decimal"></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>3. Detalle</legend>
+          <div class="rec-radios">
+            <label><input type="radio" name="tipo" value="RECLAMO" checked> <span><b>Reclamo</b> · disconformidad con el producto o servicio</span></label>
+            <label><input type="radio" name="tipo" value="QUEJA"> <span><b>Queja</b> · malestar por la atención recibida</span></label>
+          </div>
+          <label>Detalle *<textarea name="detalle" rows="4" required></textarea></label>
+          <label>Pedido del consumidor *<textarea name="pedido" rows="3" required placeholder="¿Qué solución esperas?"></textarea></label>
+        </fieldset>
+        <button class="btn" type="submit">Registrar reclamo</button>
+        <p class="rc-nota">* Campos obligatorios. Al registrar se genera tu número y fecha, y se abre WhatsApp para enviarnos la hoja.</p>
+      </form>
+      <div id="reclamoOk" hidden>
+        <h3>✅ Tu hoja fue generada</h3>
+        <p>Guarda este código. Responderemos a tu correo o teléfono en un máximo de 15 días hábiles.</p>
+        <pre id="constancia"></pre>
+        <div class="rc-acciones">
+          <a id="rcWa" class="btn" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <button id="rcCopiar" class="btn btn-sec" type="button">Copiar hoja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="pie-dir"><a href="https://www.google.com/maps/search/?api=1&query=Av%20Elmer%20Faucett%20182%20San%20Miguel%20Lima%20Peru" target="_blank" rel="noopener">📍 Av. Elmer Faucett 182, Tda. A1 · San Miguel</a></p>
+    <p><a class="pie-wa" href="https://wa.me/51937678433?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener">WhatsApp: 937 678 433</a></p>
+    <p><a href="#reclamaciones">📖 Libro de Reclamaciones</a></p>
+    <p class="pie-copy">© 2026 Estilo Pet</p>
+  </footer>
+  <a class="wa-flotante" href="https://wa.me/51937678433?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3 29l6.6-2.1c1.9 1 4 1.6 6.4 1.6 7.2 0 13-5.7 13-12.8S23.200 3 16 3zm0 23.100c-2.100 0-4-.6-5.700-1.600l-.4-.2-3.900 1.200 1.300-3.800-.3-.4A10.200 10.200 0 0 1 5.700 15.800C5.700 10.100 10.300 5.500 16 5.500s10.300 4.600 10.300 10.300S21.700 26.100 16 26.100zm5.700-7.700c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7 0a8.400 8.400 0 0 1-4.200-3.700c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400s-1.200 1.200-1.200 2.800 1.200 3.300 1.400 3.500 2.400 3.700 5.800 5.100c2.100.9 2.900.9 3.900.8.600-.1 1.900-.8 2.200-1.500s.3-1.400.2-1.500-.3-.2-.6-.4z"/></svg><span>Escríbenos</span></a>
+  <script src="js/productos.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/extras.js"></script>
+</body>
+</html>
